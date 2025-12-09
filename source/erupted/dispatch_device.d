@@ -280,6 +280,18 @@ struct DispatchDevice {
         // VK_KHR_video_decode_queue
         vkCmdDecodeVideoKHR                                      = cast( PFN_vkCmdDecodeVideoKHR                                      ) vkGetDeviceProcAddr( device, "vkCmdDecodeVideoKHR" );
 
+        // VK_KHR_dynamic_rendering
+        vkCmdBeginRenderingKHR                                   = cast( PFN_vkCmdBeginRenderingKHR                                   ) vkGetDeviceProcAddr( device, "vkCmdBeginRenderingKHR" );
+        vkCmdEndRenderingKHR                                     = cast( PFN_vkCmdEndRenderingKHR                                     ) vkGetDeviceProcAddr( device, "vkCmdEndRenderingKHR" );
+
+        // VK_KHR_device_group
+        vkGetDeviceGroupPeerMemoryFeaturesKHR                    = cast( PFN_vkGetDeviceGroupPeerMemoryFeaturesKHR                    ) vkGetDeviceProcAddr( device, "vkGetDeviceGroupPeerMemoryFeaturesKHR" );
+        vkCmdSetDeviceMaskKHR                                    = cast( PFN_vkCmdSetDeviceMaskKHR                                    ) vkGetDeviceProcAddr( device, "vkCmdSetDeviceMaskKHR" );
+        vkCmdDispatchBaseKHR                                     = cast( PFN_vkCmdDispatchBaseKHR                                     ) vkGetDeviceProcAddr( device, "vkCmdDispatchBaseKHR" );
+
+        // VK_KHR_maintenance1
+        vkTrimCommandPoolKHR                                     = cast( PFN_vkTrimCommandPoolKHR                                     ) vkGetDeviceProcAddr( device, "vkTrimCommandPoolKHR" );
+
         // VK_KHR_external_memory_fd
         vkGetMemoryFdKHR                                         = cast( PFN_vkGetMemoryFdKHR                                         ) vkGetDeviceProcAddr( device, "vkGetMemoryFdKHR" );
         vkGetMemoryFdPropertiesKHR                               = cast( PFN_vkGetMemoryFdPropertiesKHR                               ) vkGetDeviceProcAddr( device, "vkGetMemoryFdPropertiesKHR" );
@@ -292,6 +304,17 @@ struct DispatchDevice {
         vkCmdPushDescriptorSetKHR                                = cast( PFN_vkCmdPushDescriptorSetKHR                                ) vkGetDeviceProcAddr( device, "vkCmdPushDescriptorSetKHR" );
         vkCmdPushDescriptorSetWithTemplateKHR                    = cast( PFN_vkCmdPushDescriptorSetWithTemplateKHR                    ) vkGetDeviceProcAddr( device, "vkCmdPushDescriptorSetWithTemplateKHR" );
 
+        // VK_KHR_descriptor_update_template
+        vkCreateDescriptorUpdateTemplateKHR                      = cast( PFN_vkCreateDescriptorUpdateTemplateKHR                      ) vkGetDeviceProcAddr( device, "vkCreateDescriptorUpdateTemplateKHR" );
+        vkDestroyDescriptorUpdateTemplateKHR                     = cast( PFN_vkDestroyDescriptorUpdateTemplateKHR                     ) vkGetDeviceProcAddr( device, "vkDestroyDescriptorUpdateTemplateKHR" );
+        vkUpdateDescriptorSetWithTemplateKHR                     = cast( PFN_vkUpdateDescriptorSetWithTemplateKHR                     ) vkGetDeviceProcAddr( device, "vkUpdateDescriptorSetWithTemplateKHR" );
+
+        // VK_KHR_create_renderpass2
+        vkCreateRenderPass2KHR                                   = cast( PFN_vkCreateRenderPass2KHR                                   ) vkGetDeviceProcAddr( device, "vkCreateRenderPass2KHR" );
+        vkCmdBeginRenderPass2KHR                                 = cast( PFN_vkCmdBeginRenderPass2KHR                                 ) vkGetDeviceProcAddr( device, "vkCmdBeginRenderPass2KHR" );
+        vkCmdNextSubpass2KHR                                     = cast( PFN_vkCmdNextSubpass2KHR                                     ) vkGetDeviceProcAddr( device, "vkCmdNextSubpass2KHR" );
+        vkCmdEndRenderPass2KHR                                   = cast( PFN_vkCmdEndRenderPass2KHR                                   ) vkGetDeviceProcAddr( device, "vkCmdEndRenderPass2KHR" );
+
         // VK_KHR_shared_presentable_image
         vkGetSwapchainStatusKHR                                  = cast( PFN_vkGetSwapchainStatusKHR                                  ) vkGetDeviceProcAddr( device, "vkGetSwapchainStatusKHR" );
 
@@ -303,11 +326,41 @@ struct DispatchDevice {
         vkAcquireProfilingLockKHR                                = cast( PFN_vkAcquireProfilingLockKHR                                ) vkGetDeviceProcAddr( device, "vkAcquireProfilingLockKHR" );
         vkReleaseProfilingLockKHR                                = cast( PFN_vkReleaseProfilingLockKHR                                ) vkGetDeviceProcAddr( device, "vkReleaseProfilingLockKHR" );
 
+        // VK_KHR_get_memory_requirements2
+        vkGetImageMemoryRequirements2KHR                         = cast( PFN_vkGetImageMemoryRequirements2KHR                         ) vkGetDeviceProcAddr( device, "vkGetImageMemoryRequirements2KHR" );
+        vkGetBufferMemoryRequirements2KHR                        = cast( PFN_vkGetBufferMemoryRequirements2KHR                        ) vkGetDeviceProcAddr( device, "vkGetBufferMemoryRequirements2KHR" );
+        vkGetImageSparseMemoryRequirements2KHR                   = cast( PFN_vkGetImageSparseMemoryRequirements2KHR                   ) vkGetDeviceProcAddr( device, "vkGetImageSparseMemoryRequirements2KHR" );
+
+        // VK_KHR_sampler_ycbcr_conversion
+        vkCreateSamplerYcbcrConversionKHR                        = cast( PFN_vkCreateSamplerYcbcrConversionKHR                        ) vkGetDeviceProcAddr( device, "vkCreateSamplerYcbcrConversionKHR" );
+        vkDestroySamplerYcbcrConversionKHR                       = cast( PFN_vkDestroySamplerYcbcrConversionKHR                       ) vkGetDeviceProcAddr( device, "vkDestroySamplerYcbcrConversionKHR" );
+
+        // VK_KHR_bind_memory2
+        vkBindBufferMemory2KHR                                   = cast( PFN_vkBindBufferMemory2KHR                                   ) vkGetDeviceProcAddr( device, "vkBindBufferMemory2KHR" );
+        vkBindImageMemory2KHR                                    = cast( PFN_vkBindImageMemory2KHR                                    ) vkGetDeviceProcAddr( device, "vkBindImageMemory2KHR" );
+
+        // VK_KHR_maintenance3
+        vkGetDescriptorSetLayoutSupportKHR                       = cast( PFN_vkGetDescriptorSetLayoutSupportKHR                       ) vkGetDeviceProcAddr( device, "vkGetDescriptorSetLayoutSupportKHR" );
+
+        // VK_KHR_draw_indirect_count
+        vkCmdDrawIndirectCountKHR                                = cast( PFN_vkCmdDrawIndirectCountKHR                                ) vkGetDeviceProcAddr( device, "vkCmdDrawIndirectCountKHR" );
+        vkCmdDrawIndexedIndirectCountKHR                         = cast( PFN_vkCmdDrawIndexedIndirectCountKHR                         ) vkGetDeviceProcAddr( device, "vkCmdDrawIndexedIndirectCountKHR" );
+
+        // VK_KHR_timeline_semaphore
+        vkGetSemaphoreCounterValueKHR                            = cast( PFN_vkGetSemaphoreCounterValueKHR                            ) vkGetDeviceProcAddr( device, "vkGetSemaphoreCounterValueKHR" );
+        vkWaitSemaphoresKHR                                      = cast( PFN_vkWaitSemaphoresKHR                                      ) vkGetDeviceProcAddr( device, "vkWaitSemaphoresKHR" );
+        vkSignalSemaphoreKHR                                     = cast( PFN_vkSignalSemaphoreKHR                                     ) vkGetDeviceProcAddr( device, "vkSignalSemaphoreKHR" );
+
         // VK_KHR_fragment_shading_rate
         vkCmdSetFragmentShadingRateKHR                           = cast( PFN_vkCmdSetFragmentShadingRateKHR                           ) vkGetDeviceProcAddr( device, "vkCmdSetFragmentShadingRateKHR" );
 
         // VK_KHR_present_wait
         vkWaitForPresentKHR                                      = cast( PFN_vkWaitForPresentKHR                                      ) vkGetDeviceProcAddr( device, "vkWaitForPresentKHR" );
+
+        // VK_KHR_buffer_device_address
+        vkGetBufferDeviceAddressKHR                              = cast( PFN_vkGetBufferDeviceAddressKHR                              ) vkGetDeviceProcAddr( device, "vkGetBufferDeviceAddressKHR" );
+        vkGetBufferOpaqueCaptureAddressKHR                       = cast( PFN_vkGetBufferOpaqueCaptureAddressKHR                       ) vkGetDeviceProcAddr( device, "vkGetBufferOpaqueCaptureAddressKHR" );
+        vkGetDeviceMemoryOpaqueCaptureAddressKHR                 = cast( PFN_vkGetDeviceMemoryOpaqueCaptureAddressKHR                 ) vkGetDeviceProcAddr( device, "vkGetDeviceMemoryOpaqueCaptureAddressKHR" );
 
         // VK_KHR_deferred_host_operations
         vkCreateDeferredOperationKHR                             = cast( PFN_vkCreateDeferredOperationKHR                             ) vkGetDeviceProcAddr( device, "vkCreateDeferredOperationKHR" );
@@ -326,11 +379,30 @@ struct DispatchDevice {
         vkUnmapMemory2KHR                                        = cast( PFN_vkUnmapMemory2KHR                                        ) vkGetDeviceProcAddr( device, "vkUnmapMemory2KHR" );
 
         // VK_KHR_synchronization2
+        vkCmdSetEvent2KHR                                        = cast( PFN_vkCmdSetEvent2KHR                                        ) vkGetDeviceProcAddr( device, "vkCmdSetEvent2KHR" );
+        vkCmdResetEvent2KHR                                      = cast( PFN_vkCmdResetEvent2KHR                                      ) vkGetDeviceProcAddr( device, "vkCmdResetEvent2KHR" );
+        vkCmdWaitEvents2KHR                                      = cast( PFN_vkCmdWaitEvents2KHR                                      ) vkGetDeviceProcAddr( device, "vkCmdWaitEvents2KHR" );
+        vkCmdPipelineBarrier2KHR                                 = cast( PFN_vkCmdPipelineBarrier2KHR                                 ) vkGetDeviceProcAddr( device, "vkCmdPipelineBarrier2KHR" );
+        vkCmdWriteTimestamp2KHR                                  = cast( PFN_vkCmdWriteTimestamp2KHR                                  ) vkGetDeviceProcAddr( device, "vkCmdWriteTimestamp2KHR" );
+        vkQueueSubmit2KHR                                        = cast( PFN_vkQueueSubmit2KHR                                        ) vkGetDeviceProcAddr( device, "vkQueueSubmit2KHR" );
         vkCmdWriteBufferMarker2AMD                               = cast( PFN_vkCmdWriteBufferMarker2AMD                               ) vkGetDeviceProcAddr( device, "vkCmdWriteBufferMarker2AMD" );
         vkGetQueueCheckpointData2NV                              = cast( PFN_vkGetQueueCheckpointData2NV                              ) vkGetDeviceProcAddr( device, "vkGetQueueCheckpointData2NV" );
 
+        // VK_KHR_copy_commands2
+        vkCmdCopyBuffer2KHR                                      = cast( PFN_vkCmdCopyBuffer2KHR                                      ) vkGetDeviceProcAddr( device, "vkCmdCopyBuffer2KHR" );
+        vkCmdCopyImage2KHR                                       = cast( PFN_vkCmdCopyImage2KHR                                       ) vkGetDeviceProcAddr( device, "vkCmdCopyImage2KHR" );
+        vkCmdCopyBufferToImage2KHR                               = cast( PFN_vkCmdCopyBufferToImage2KHR                               ) vkGetDeviceProcAddr( device, "vkCmdCopyBufferToImage2KHR" );
+        vkCmdCopyImageToBuffer2KHR                               = cast( PFN_vkCmdCopyImageToBuffer2KHR                               ) vkGetDeviceProcAddr( device, "vkCmdCopyImageToBuffer2KHR" );
+        vkCmdBlitImage2KHR                                       = cast( PFN_vkCmdBlitImage2KHR                                       ) vkGetDeviceProcAddr( device, "vkCmdBlitImage2KHR" );
+        vkCmdResolveImage2KHR                                    = cast( PFN_vkCmdResolveImage2KHR                                    ) vkGetDeviceProcAddr( device, "vkCmdResolveImage2KHR" );
+
         // VK_KHR_ray_tracing_maintenance1
         vkCmdTraceRaysIndirect2KHR                               = cast( PFN_vkCmdTraceRaysIndirect2KHR                               ) vkGetDeviceProcAddr( device, "vkCmdTraceRaysIndirect2KHR" );
+
+        // VK_KHR_maintenance4
+        vkGetDeviceBufferMemoryRequirementsKHR                   = cast( PFN_vkGetDeviceBufferMemoryRequirementsKHR                   ) vkGetDeviceProcAddr( device, "vkGetDeviceBufferMemoryRequirementsKHR" );
+        vkGetDeviceImageMemoryRequirementsKHR                    = cast( PFN_vkGetDeviceImageMemoryRequirementsKHR                    ) vkGetDeviceProcAddr( device, "vkGetDeviceImageMemoryRequirementsKHR" );
+        vkGetDeviceImageSparseMemoryRequirementsKHR              = cast( PFN_vkGetDeviceImageSparseMemoryRequirementsKHR              ) vkGetDeviceProcAddr( device, "vkGetDeviceImageSparseMemoryRequirementsKHR" );
 
         // VK_EXT_debug_marker
         vkDebugMarkerSetObjectTagEXT                             = cast( PFN_vkDebugMarkerSetObjectTagEXT                             ) vkGetDeviceProcAddr( device, "vkDebugMarkerSetObjectTagEXT" );
@@ -879,6 +951,18 @@ struct DispatchDevice {
     // VK_KHR_video_decode_queue
     void      CmdDecodeVideoKHR( const( VkVideoDecodeInfoKHR )* pDecodeInfo ) { vkCmdDecodeVideoKHR( commandBuffer, pDecodeInfo ); }
 
+    // VK_KHR_dynamic_rendering
+    void      CmdBeginRenderingKHR( const( VkRenderingInfo )* pRenderingInfo ) { vkCmdBeginRenderingKHR( commandBuffer, pRenderingInfo ); }
+    void      CmdEndRenderingKHR() { vkCmdEndRenderingKHR( commandBuffer ); }
+
+    // VK_KHR_device_group
+    void      GetDeviceGroupPeerMemoryFeaturesKHR( uint32_t heapIndex, uint32_t localDeviceIndex, uint32_t remoteDeviceIndex, VkPeerMemoryFeatureFlags* pPeerMemoryFeatures ) { vkGetDeviceGroupPeerMemoryFeaturesKHR( vkDevice, heapIndex, localDeviceIndex, remoteDeviceIndex, pPeerMemoryFeatures ); }
+    void      CmdSetDeviceMaskKHR( uint32_t deviceMask ) { vkCmdSetDeviceMaskKHR( commandBuffer, deviceMask ); }
+    void      CmdDispatchBaseKHR( uint32_t baseGroupX, uint32_t baseGroupY, uint32_t baseGroupZ, uint32_t groupCountX, uint32_t groupCountY, uint32_t groupCountZ ) { vkCmdDispatchBaseKHR( commandBuffer, baseGroupX, baseGroupY, baseGroupZ, groupCountX, groupCountY, groupCountZ ); }
+
+    // VK_KHR_maintenance1
+    void      TrimCommandPoolKHR( VkCommandPool commandPool, VkCommandPoolTrimFlags flags ) { vkTrimCommandPoolKHR( vkDevice, commandPool, flags ); }
+
     // VK_KHR_external_memory_fd
     VkResult  GetMemoryFdKHR( const( VkMemoryGetFdInfoKHR )* pGetFdInfo, int* pFd ) { return vkGetMemoryFdKHR( vkDevice, pGetFdInfo, pFd ); }
     VkResult  GetMemoryFdPropertiesKHR( VkExternalMemoryHandleTypeFlagBits handleType, int fd, VkMemoryFdPropertiesKHR* pMemoryFdProperties ) { return vkGetMemoryFdPropertiesKHR( vkDevice, handleType, fd, pMemoryFdProperties ); }
@@ -891,6 +975,17 @@ struct DispatchDevice {
     void      CmdPushDescriptorSetKHR( VkPipelineBindPoint pipelineBindPoint, VkPipelineLayout layout, uint32_t set, uint32_t descriptorWriteCount, const( VkWriteDescriptorSet )* pDescriptorWrites ) { vkCmdPushDescriptorSetKHR( commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, pDescriptorWrites ); }
     void      CmdPushDescriptorSetWithTemplateKHR( VkDescriptorUpdateTemplate descriptorUpdateTemplate, VkPipelineLayout layout, uint32_t set, const( void )* pData ) { vkCmdPushDescriptorSetWithTemplateKHR( commandBuffer, descriptorUpdateTemplate, layout, set, pData ); }
 
+    // VK_KHR_descriptor_update_template
+    VkResult  CreateDescriptorUpdateTemplateKHR( const( VkDescriptorUpdateTemplateCreateInfo )* pCreateInfo, VkDescriptorUpdateTemplate* pDescriptorUpdateTemplate ) { return vkCreateDescriptorUpdateTemplateKHR( vkDevice, pCreateInfo, pAllocator, pDescriptorUpdateTemplate ); }
+    void      DestroyDescriptorUpdateTemplateKHR( VkDescriptorUpdateTemplate descriptorUpdateTemplate ) { vkDestroyDescriptorUpdateTemplateKHR( vkDevice, descriptorUpdateTemplate, pAllocator ); }
+    void      UpdateDescriptorSetWithTemplateKHR( VkDescriptorSet descriptorSet, VkDescriptorUpdateTemplate descriptorUpdateTemplate, const( void )* pData ) { vkUpdateDescriptorSetWithTemplateKHR( vkDevice, descriptorSet, descriptorUpdateTemplate, pData ); }
+
+    // VK_KHR_create_renderpass2
+    VkResult  CreateRenderPass2KHR( const( VkRenderPassCreateInfo2 )* pCreateInfo, VkRenderPass* pRenderPass ) { return vkCreateRenderPass2KHR( vkDevice, pCreateInfo, pAllocator, pRenderPass ); }
+    void      CmdBeginRenderPass2KHR( const( VkRenderPassBeginInfo )* pRenderPassBegin, const( VkSubpassBeginInfo )* pSubpassBeginInfo ) { vkCmdBeginRenderPass2KHR( commandBuffer, pRenderPassBegin, pSubpassBeginInfo ); }
+    void      CmdNextSubpass2KHR( const( VkSubpassBeginInfo )* pSubpassBeginInfo, const( VkSubpassEndInfo )* pSubpassEndInfo ) { vkCmdNextSubpass2KHR( commandBuffer, pSubpassBeginInfo, pSubpassEndInfo ); }
+    void      CmdEndRenderPass2KHR( const( VkSubpassEndInfo )* pSubpassEndInfo ) { vkCmdEndRenderPass2KHR( commandBuffer, pSubpassEndInfo ); }
+
     // VK_KHR_shared_presentable_image
     VkResult  GetSwapchainStatusKHR( VkSwapchainKHR swapchain ) { return vkGetSwapchainStatusKHR( vkDevice, swapchain ); }
 
@@ -902,11 +997,41 @@ struct DispatchDevice {
     VkResult  AcquireProfilingLockKHR( const( VkAcquireProfilingLockInfoKHR )* pInfo ) { return vkAcquireProfilingLockKHR( vkDevice, pInfo ); }
     void      ReleaseProfilingLockKHR() { vkReleaseProfilingLockKHR( vkDevice ); }
 
+    // VK_KHR_get_memory_requirements2
+    void      GetImageMemoryRequirements2KHR( const( VkImageMemoryRequirementsInfo2 )* pInfo, VkMemoryRequirements2* pMemoryRequirements ) { vkGetImageMemoryRequirements2KHR( vkDevice, pInfo, pMemoryRequirements ); }
+    void      GetBufferMemoryRequirements2KHR( const( VkBufferMemoryRequirementsInfo2 )* pInfo, VkMemoryRequirements2* pMemoryRequirements ) { vkGetBufferMemoryRequirements2KHR( vkDevice, pInfo, pMemoryRequirements ); }
+    void      GetImageSparseMemoryRequirements2KHR( const( VkImageSparseMemoryRequirementsInfo2 )* pInfo, uint32_t* pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements2* pSparseMemoryRequirements ) { vkGetImageSparseMemoryRequirements2KHR( vkDevice, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements ); }
+
+    // VK_KHR_sampler_ycbcr_conversion
+    VkResult  CreateSamplerYcbcrConversionKHR( const( VkSamplerYcbcrConversionCreateInfo )* pCreateInfo, VkSamplerYcbcrConversion* pYcbcrConversion ) { return vkCreateSamplerYcbcrConversionKHR( vkDevice, pCreateInfo, pAllocator, pYcbcrConversion ); }
+    void      DestroySamplerYcbcrConversionKHR( VkSamplerYcbcrConversion ycbcrConversion ) { vkDestroySamplerYcbcrConversionKHR( vkDevice, ycbcrConversion, pAllocator ); }
+
+    // VK_KHR_bind_memory2
+    VkResult  BindBufferMemory2KHR( uint32_t bindInfoCount, const( VkBindBufferMemoryInfo )* pBindInfos ) { return vkBindBufferMemory2KHR( vkDevice, bindInfoCount, pBindInfos ); }
+    VkResult  BindImageMemory2KHR( uint32_t bindInfoCount, const( VkBindImageMemoryInfo )* pBindInfos ) { return vkBindImageMemory2KHR( vkDevice, bindInfoCount, pBindInfos ); }
+
+    // VK_KHR_maintenance3
+    void      GetDescriptorSetLayoutSupportKHR( const( VkDescriptorSetLayoutCreateInfo )* pCreateInfo, VkDescriptorSetLayoutSupport* pSupport ) { vkGetDescriptorSetLayoutSupportKHR( vkDevice, pCreateInfo, pSupport ); }
+
+    // VK_KHR_draw_indirect_count
+    void      CmdDrawIndirectCountKHR( VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride ) { vkCmdDrawIndirectCountKHR( commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride ); }
+    void      CmdDrawIndexedIndirectCountKHR( VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride ) { vkCmdDrawIndexedIndirectCountKHR( commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride ); }
+
+    // VK_KHR_timeline_semaphore
+    VkResult  GetSemaphoreCounterValueKHR( VkSemaphore semaphore, uint64_t* pValue ) { return vkGetSemaphoreCounterValueKHR( vkDevice, semaphore, pValue ); }
+    VkResult  WaitSemaphoresKHR( const( VkSemaphoreWaitInfo )* pWaitInfo, uint64_t timeout ) { return vkWaitSemaphoresKHR( vkDevice, pWaitInfo, timeout ); }
+    VkResult  SignalSemaphoreKHR( const( VkSemaphoreSignalInfo )* pSignalInfo ) { return vkSignalSemaphoreKHR( vkDevice, pSignalInfo ); }
+
     // VK_KHR_fragment_shading_rate
     void      CmdSetFragmentShadingRateKHR( const( VkExtent2D )* pFragmentSize, const VkFragmentShadingRateCombinerOpKHR[2] combinerOps ) { vkCmdSetFragmentShadingRateKHR( commandBuffer, pFragmentSize, combinerOps ); }
 
     // VK_KHR_present_wait
     VkResult  WaitForPresentKHR( VkSwapchainKHR swapchain, uint64_t presentId, uint64_t timeout ) { return vkWaitForPresentKHR( vkDevice, swapchain, presentId, timeout ); }
+
+    // VK_KHR_buffer_device_address
+    VkDeviceAddress  GetBufferDeviceAddressKHR( const( VkBufferDeviceAddressInfo )* pInfo ) { return vkGetBufferDeviceAddressKHR( vkDevice, pInfo ); }
+    uint64_t  GetBufferOpaqueCaptureAddressKHR( const( VkBufferDeviceAddressInfo )* pInfo ) { return vkGetBufferOpaqueCaptureAddressKHR( vkDevice, pInfo ); }
+    uint64_t  GetDeviceMemoryOpaqueCaptureAddressKHR( const( VkDeviceMemoryOpaqueCaptureAddressInfo )* pInfo ) { return vkGetDeviceMemoryOpaqueCaptureAddressKHR( vkDevice, pInfo ); }
 
     // VK_KHR_deferred_host_operations
     VkResult  CreateDeferredOperationKHR( VkDeferredOperationKHR* pDeferredOperation ) { return vkCreateDeferredOperationKHR( vkDevice, pAllocator, pDeferredOperation ); }
@@ -925,10 +1050,28 @@ struct DispatchDevice {
     VkResult  UnmapMemory2KHR( const( VkMemoryUnmapInfoKHR )* pMemoryUnmapInfo ) { return vkUnmapMemory2KHR( vkDevice, pMemoryUnmapInfo ); }
 
     // VK_KHR_synchronization2
+    void      CmdSetEvent2KHR( VkEvent event, const( VkDependencyInfo )* pDependencyInfo ) { vkCmdSetEvent2KHR( commandBuffer, event, pDependencyInfo ); }
+    void      CmdResetEvent2KHR( VkEvent event, VkPipelineStageFlags2 stageMask ) { vkCmdResetEvent2KHR( commandBuffer, event, stageMask ); }
+    void      CmdWaitEvents2KHR( uint32_t eventCount, const( VkEvent )* pEvents, const( VkDependencyInfo )* pDependencyInfos ) { vkCmdWaitEvents2KHR( commandBuffer, eventCount, pEvents, pDependencyInfos ); }
+    void      CmdPipelineBarrier2KHR( const( VkDependencyInfo )* pDependencyInfo ) { vkCmdPipelineBarrier2KHR( commandBuffer, pDependencyInfo ); }
+    void      CmdWriteTimestamp2KHR( VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint32_t query ) { vkCmdWriteTimestamp2KHR( commandBuffer, stage, queryPool, query ); }
     void      CmdWriteBufferMarker2AMD( VkPipelineStageFlags2 stage, VkBuffer dstBuffer, VkDeviceSize dstOffset, uint32_t marker ) { vkCmdWriteBufferMarker2AMD( commandBuffer, stage, dstBuffer, dstOffset, marker ); }
+
+    // VK_KHR_copy_commands2
+    void      CmdCopyBuffer2KHR( const( VkCopyBufferInfo2 )* pCopyBufferInfo ) { vkCmdCopyBuffer2KHR( commandBuffer, pCopyBufferInfo ); }
+    void      CmdCopyImage2KHR( const( VkCopyImageInfo2 )* pCopyImageInfo ) { vkCmdCopyImage2KHR( commandBuffer, pCopyImageInfo ); }
+    void      CmdCopyBufferToImage2KHR( const( VkCopyBufferToImageInfo2 )* pCopyBufferToImageInfo ) { vkCmdCopyBufferToImage2KHR( commandBuffer, pCopyBufferToImageInfo ); }
+    void      CmdCopyImageToBuffer2KHR( const( VkCopyImageToBufferInfo2 )* pCopyImageToBufferInfo ) { vkCmdCopyImageToBuffer2KHR( commandBuffer, pCopyImageToBufferInfo ); }
+    void      CmdBlitImage2KHR( const( VkBlitImageInfo2 )* pBlitImageInfo ) { vkCmdBlitImage2KHR( commandBuffer, pBlitImageInfo ); }
+    void      CmdResolveImage2KHR( const( VkResolveImageInfo2 )* pResolveImageInfo ) { vkCmdResolveImage2KHR( commandBuffer, pResolveImageInfo ); }
 
     // VK_KHR_ray_tracing_maintenance1
     void      CmdTraceRaysIndirect2KHR( VkDeviceAddress indirectDeviceAddress ) { vkCmdTraceRaysIndirect2KHR( commandBuffer, indirectDeviceAddress ); }
+
+    // VK_KHR_maintenance4
+    void      GetDeviceBufferMemoryRequirementsKHR( const( VkDeviceBufferMemoryRequirements )* pInfo, VkMemoryRequirements2* pMemoryRequirements ) { vkGetDeviceBufferMemoryRequirementsKHR( vkDevice, pInfo, pMemoryRequirements ); }
+    void      GetDeviceImageMemoryRequirementsKHR( const( VkDeviceImageMemoryRequirements )* pInfo, VkMemoryRequirements2* pMemoryRequirements ) { vkGetDeviceImageMemoryRequirementsKHR( vkDevice, pInfo, pMemoryRequirements ); }
+    void      GetDeviceImageSparseMemoryRequirementsKHR( const( VkDeviceImageMemoryRequirements )* pInfo, uint32_t* pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements2* pSparseMemoryRequirements ) { vkGetDeviceImageSparseMemoryRequirementsKHR( vkDevice, pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements ); }
 
     // VK_EXT_debug_marker
     VkResult  DebugMarkerSetObjectTagEXT( const( VkDebugMarkerObjectTagInfoEXT )* pTagInfo ) { return vkDebugMarkerSetObjectTagEXT( vkDevice, pTagInfo ); }
@@ -1238,79 +1381,6 @@ struct DispatchDevice {
     void      CmdDrawMeshTasksIndirectEXT( VkBuffer buffer, VkDeviceSize offset, uint32_t drawCount, uint32_t stride ) { vkCmdDrawMeshTasksIndirectEXT( commandBuffer, buffer, offset, drawCount, stride ); }
     void      CmdDrawMeshTasksIndirectCountEXT( VkBuffer buffer, VkDeviceSize offset, VkBuffer countBuffer, VkDeviceSize countBufferOffset, uint32_t maxDrawCount, uint32_t stride ) { vkCmdDrawMeshTasksIndirectCountEXT( commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride ); }
 
-    // VK_KHR_dynamic_rendering
-    alias CmdBeginRenderingKHR                                         = CmdBeginRendering;
-    alias CmdEndRenderingKHR                                           = CmdEndRendering;
-
-    // VK_KHR_device_group
-    alias GetDeviceGroupPeerMemoryFeaturesKHR                          = GetDeviceGroupPeerMemoryFeatures;
-    alias CmdSetDeviceMaskKHR                                          = CmdSetDeviceMask;
-    alias CmdDispatchBaseKHR                                           = CmdDispatchBase;
-
-    // VK_KHR_maintenance1
-    alias TrimCommandPoolKHR                                           = TrimCommandPool;
-
-    // VK_KHR_descriptor_update_template
-    alias CreateDescriptorUpdateTemplateKHR                            = CreateDescriptorUpdateTemplate;
-    alias DestroyDescriptorUpdateTemplateKHR                           = DestroyDescriptorUpdateTemplate;
-    alias UpdateDescriptorSetWithTemplateKHR                           = UpdateDescriptorSetWithTemplate;
-
-    // VK_KHR_create_renderpass2
-    alias CreateRenderPass2KHR                                         = CreateRenderPass2;
-    alias CmdBeginRenderPass2KHR                                       = CmdBeginRenderPass2;
-    alias CmdNextSubpass2KHR                                           = CmdNextSubpass2;
-    alias CmdEndRenderPass2KHR                                         = CmdEndRenderPass2;
-
-    // VK_KHR_get_memory_requirements2
-    alias GetImageMemoryRequirements2KHR                               = GetImageMemoryRequirements2;
-    alias GetBufferMemoryRequirements2KHR                              = GetBufferMemoryRequirements2;
-    alias GetImageSparseMemoryRequirements2KHR                         = GetImageSparseMemoryRequirements2;
-
-    // VK_KHR_sampler_ycbcr_conversion
-    alias CreateSamplerYcbcrConversionKHR                              = CreateSamplerYcbcrConversion;
-    alias DestroySamplerYcbcrConversionKHR                             = DestroySamplerYcbcrConversion;
-
-    // VK_KHR_bind_memory2
-    alias BindBufferMemory2KHR                                         = BindBufferMemory2;
-    alias BindImageMemory2KHR                                          = BindImageMemory2;
-
-    // VK_KHR_maintenance3
-    alias GetDescriptorSetLayoutSupportKHR                             = GetDescriptorSetLayoutSupport;
-
-    // VK_KHR_draw_indirect_count
-    alias CmdDrawIndirectCountKHR                                      = CmdDrawIndirectCount;
-    alias CmdDrawIndexedIndirectCountKHR                               = CmdDrawIndexedIndirectCount;
-
-    // VK_KHR_timeline_semaphore
-    alias GetSemaphoreCounterValueKHR                                  = GetSemaphoreCounterValue;
-    alias WaitSemaphoresKHR                                            = WaitSemaphores;
-    alias SignalSemaphoreKHR                                           = SignalSemaphore;
-
-    // VK_KHR_buffer_device_address
-    alias GetBufferDeviceAddressKHR                                    = GetBufferDeviceAddress;
-    alias GetBufferOpaqueCaptureAddressKHR                             = GetBufferOpaqueCaptureAddress;
-    alias GetDeviceMemoryOpaqueCaptureAddressKHR                       = GetDeviceMemoryOpaqueCaptureAddress;
-
-    // VK_KHR_synchronization2
-    alias CmdSetEvent2KHR                                              = CmdSetEvent2;
-    alias CmdResetEvent2KHR                                            = CmdResetEvent2;
-    alias CmdWaitEvents2KHR                                            = CmdWaitEvents2;
-    alias CmdPipelineBarrier2KHR                                       = CmdPipelineBarrier2;
-    alias CmdWriteTimestamp2KHR                                        = CmdWriteTimestamp2;
-
-    // VK_KHR_copy_commands2
-    alias CmdCopyBuffer2KHR                                            = CmdCopyBuffer2;
-    alias CmdCopyImage2KHR                                             = CmdCopyImage2;
-    alias CmdCopyBufferToImage2KHR                                     = CmdCopyBufferToImage2;
-    alias CmdCopyImageToBuffer2KHR                                     = CmdCopyImageToBuffer2;
-    alias CmdBlitImage2KHR                                             = CmdBlitImage2;
-    alias CmdResolveImage2KHR                                          = CmdResolveImage2;
-
-    // VK_KHR_maintenance4
-    alias GetDeviceBufferMemoryRequirementsKHR                         = GetDeviceBufferMemoryRequirements;
-    alias GetDeviceImageMemoryRequirementsKHR                          = GetDeviceImageMemoryRequirements;
-    alias GetDeviceImageSparseMemoryRequirementsKHR                    = GetDeviceImageSparseMemoryRequirements;
-
     // VK_AMD_draw_indirect_count
     alias CmdDrawIndirectCountAMD                                      = CmdDrawIndirectCount;
     alias CmdDrawIndexedIndirectCountAMD                               = CmdDrawIndexedIndirectCount;
@@ -1573,6 +1643,18 @@ struct DispatchDevice {
     // VK_KHR_video_decode_queue
     PFN_vkCmdDecodeVideoKHR                                      vkCmdDecodeVideoKHR;
 
+    // VK_KHR_dynamic_rendering
+    PFN_vkCmdBeginRenderingKHR                                   vkCmdBeginRenderingKHR;
+    PFN_vkCmdEndRenderingKHR                                     vkCmdEndRenderingKHR;
+
+    // VK_KHR_device_group
+    PFN_vkGetDeviceGroupPeerMemoryFeaturesKHR                    vkGetDeviceGroupPeerMemoryFeaturesKHR;
+    PFN_vkCmdSetDeviceMaskKHR                                    vkCmdSetDeviceMaskKHR;
+    PFN_vkCmdDispatchBaseKHR                                     vkCmdDispatchBaseKHR;
+
+    // VK_KHR_maintenance1
+    PFN_vkTrimCommandPoolKHR                                     vkTrimCommandPoolKHR;
+
     // VK_KHR_external_memory_fd
     PFN_vkGetMemoryFdKHR                                         vkGetMemoryFdKHR;
     PFN_vkGetMemoryFdPropertiesKHR                               vkGetMemoryFdPropertiesKHR;
@@ -1585,6 +1667,17 @@ struct DispatchDevice {
     PFN_vkCmdPushDescriptorSetKHR                                vkCmdPushDescriptorSetKHR;
     PFN_vkCmdPushDescriptorSetWithTemplateKHR                    vkCmdPushDescriptorSetWithTemplateKHR;
 
+    // VK_KHR_descriptor_update_template
+    PFN_vkCreateDescriptorUpdateTemplateKHR                      vkCreateDescriptorUpdateTemplateKHR;
+    PFN_vkDestroyDescriptorUpdateTemplateKHR                     vkDestroyDescriptorUpdateTemplateKHR;
+    PFN_vkUpdateDescriptorSetWithTemplateKHR                     vkUpdateDescriptorSetWithTemplateKHR;
+
+    // VK_KHR_create_renderpass2
+    PFN_vkCreateRenderPass2KHR                                   vkCreateRenderPass2KHR;
+    PFN_vkCmdBeginRenderPass2KHR                                 vkCmdBeginRenderPass2KHR;
+    PFN_vkCmdNextSubpass2KHR                                     vkCmdNextSubpass2KHR;
+    PFN_vkCmdEndRenderPass2KHR                                   vkCmdEndRenderPass2KHR;
+
     // VK_KHR_shared_presentable_image
     PFN_vkGetSwapchainStatusKHR                                  vkGetSwapchainStatusKHR;
 
@@ -1596,11 +1689,41 @@ struct DispatchDevice {
     PFN_vkAcquireProfilingLockKHR                                vkAcquireProfilingLockKHR;
     PFN_vkReleaseProfilingLockKHR                                vkReleaseProfilingLockKHR;
 
+    // VK_KHR_get_memory_requirements2
+    PFN_vkGetImageMemoryRequirements2KHR                         vkGetImageMemoryRequirements2KHR;
+    PFN_vkGetBufferMemoryRequirements2KHR                        vkGetBufferMemoryRequirements2KHR;
+    PFN_vkGetImageSparseMemoryRequirements2KHR                   vkGetImageSparseMemoryRequirements2KHR;
+
+    // VK_KHR_sampler_ycbcr_conversion
+    PFN_vkCreateSamplerYcbcrConversionKHR                        vkCreateSamplerYcbcrConversionKHR;
+    PFN_vkDestroySamplerYcbcrConversionKHR                       vkDestroySamplerYcbcrConversionKHR;
+
+    // VK_KHR_bind_memory2
+    PFN_vkBindBufferMemory2KHR                                   vkBindBufferMemory2KHR;
+    PFN_vkBindImageMemory2KHR                                    vkBindImageMemory2KHR;
+
+    // VK_KHR_maintenance3
+    PFN_vkGetDescriptorSetLayoutSupportKHR                       vkGetDescriptorSetLayoutSupportKHR;
+
+    // VK_KHR_draw_indirect_count
+    PFN_vkCmdDrawIndirectCountKHR                                vkCmdDrawIndirectCountKHR;
+    PFN_vkCmdDrawIndexedIndirectCountKHR                         vkCmdDrawIndexedIndirectCountKHR;
+
+    // VK_KHR_timeline_semaphore
+    PFN_vkGetSemaphoreCounterValueKHR                            vkGetSemaphoreCounterValueKHR;
+    PFN_vkWaitSemaphoresKHR                                      vkWaitSemaphoresKHR;
+    PFN_vkSignalSemaphoreKHR                                     vkSignalSemaphoreKHR;
+
     // VK_KHR_fragment_shading_rate
     PFN_vkCmdSetFragmentShadingRateKHR                           vkCmdSetFragmentShadingRateKHR;
 
     // VK_KHR_present_wait
     PFN_vkWaitForPresentKHR                                      vkWaitForPresentKHR;
+
+    // VK_KHR_buffer_device_address
+    PFN_vkGetBufferDeviceAddressKHR                              vkGetBufferDeviceAddressKHR;
+    PFN_vkGetBufferOpaqueCaptureAddressKHR                       vkGetBufferOpaqueCaptureAddressKHR;
+    PFN_vkGetDeviceMemoryOpaqueCaptureAddressKHR                 vkGetDeviceMemoryOpaqueCaptureAddressKHR;
 
     // VK_KHR_deferred_host_operations
     PFN_vkCreateDeferredOperationKHR                             vkCreateDeferredOperationKHR;
@@ -1619,11 +1742,30 @@ struct DispatchDevice {
     PFN_vkUnmapMemory2KHR                                        vkUnmapMemory2KHR;
 
     // VK_KHR_synchronization2
+    PFN_vkCmdSetEvent2KHR                                        vkCmdSetEvent2KHR;
+    PFN_vkCmdResetEvent2KHR                                      vkCmdResetEvent2KHR;
+    PFN_vkCmdWaitEvents2KHR                                      vkCmdWaitEvents2KHR;
+    PFN_vkCmdPipelineBarrier2KHR                                 vkCmdPipelineBarrier2KHR;
+    PFN_vkCmdWriteTimestamp2KHR                                  vkCmdWriteTimestamp2KHR;
+    PFN_vkQueueSubmit2KHR                                        vkQueueSubmit2KHR;
     PFN_vkCmdWriteBufferMarker2AMD                               vkCmdWriteBufferMarker2AMD;
     PFN_vkGetQueueCheckpointData2NV                              vkGetQueueCheckpointData2NV;
 
+    // VK_KHR_copy_commands2
+    PFN_vkCmdCopyBuffer2KHR                                      vkCmdCopyBuffer2KHR;
+    PFN_vkCmdCopyImage2KHR                                       vkCmdCopyImage2KHR;
+    PFN_vkCmdCopyBufferToImage2KHR                               vkCmdCopyBufferToImage2KHR;
+    PFN_vkCmdCopyImageToBuffer2KHR                               vkCmdCopyImageToBuffer2KHR;
+    PFN_vkCmdBlitImage2KHR                                       vkCmdBlitImage2KHR;
+    PFN_vkCmdResolveImage2KHR                                    vkCmdResolveImage2KHR;
+
     // VK_KHR_ray_tracing_maintenance1
     PFN_vkCmdTraceRaysIndirect2KHR                               vkCmdTraceRaysIndirect2KHR;
+
+    // VK_KHR_maintenance4
+    PFN_vkGetDeviceBufferMemoryRequirementsKHR                   vkGetDeviceBufferMemoryRequirementsKHR;
+    PFN_vkGetDeviceImageMemoryRequirementsKHR                    vkGetDeviceImageMemoryRequirementsKHR;
+    PFN_vkGetDeviceImageSparseMemoryRequirementsKHR              vkGetDeviceImageSparseMemoryRequirementsKHR;
 
     // VK_EXT_debug_marker
     PFN_vkDebugMarkerSetObjectTagEXT                             vkDebugMarkerSetObjectTagEXT;
@@ -1937,80 +2079,6 @@ struct DispatchDevice {
     PFN_vkCmdDrawMeshTasksEXT                                    vkCmdDrawMeshTasksEXT;
     PFN_vkCmdDrawMeshTasksIndirectEXT                            vkCmdDrawMeshTasksIndirectEXT;
     PFN_vkCmdDrawMeshTasksIndirectCountEXT                       vkCmdDrawMeshTasksIndirectCountEXT;
-
-    // VK_KHR_dynamic_rendering
-    alias vkCmdBeginRenderingKHR                                         = vkCmdBeginRendering;
-    alias vkCmdEndRenderingKHR                                           = vkCmdEndRendering;
-
-    // VK_KHR_device_group
-    alias vkGetDeviceGroupPeerMemoryFeaturesKHR                          = vkGetDeviceGroupPeerMemoryFeatures;
-    alias vkCmdSetDeviceMaskKHR                                          = vkCmdSetDeviceMask;
-    alias vkCmdDispatchBaseKHR                                           = vkCmdDispatchBase;
-
-    // VK_KHR_maintenance1
-    alias vkTrimCommandPoolKHR                                           = vkTrimCommandPool;
-
-    // VK_KHR_descriptor_update_template
-    alias vkCreateDescriptorUpdateTemplateKHR                            = vkCreateDescriptorUpdateTemplate;
-    alias vkDestroyDescriptorUpdateTemplateKHR                           = vkDestroyDescriptorUpdateTemplate;
-    alias vkUpdateDescriptorSetWithTemplateKHR                           = vkUpdateDescriptorSetWithTemplate;
-
-    // VK_KHR_create_renderpass2
-    alias vkCreateRenderPass2KHR                                         = vkCreateRenderPass2;
-    alias vkCmdBeginRenderPass2KHR                                       = vkCmdBeginRenderPass2;
-    alias vkCmdNextSubpass2KHR                                           = vkCmdNextSubpass2;
-    alias vkCmdEndRenderPass2KHR                                         = vkCmdEndRenderPass2;
-
-    // VK_KHR_get_memory_requirements2
-    alias vkGetImageMemoryRequirements2KHR                               = vkGetImageMemoryRequirements2;
-    alias vkGetBufferMemoryRequirements2KHR                              = vkGetBufferMemoryRequirements2;
-    alias vkGetImageSparseMemoryRequirements2KHR                         = vkGetImageSparseMemoryRequirements2;
-
-    // VK_KHR_sampler_ycbcr_conversion
-    alias vkCreateSamplerYcbcrConversionKHR                              = vkCreateSamplerYcbcrConversion;
-    alias vkDestroySamplerYcbcrConversionKHR                             = vkDestroySamplerYcbcrConversion;
-
-    // VK_KHR_bind_memory2
-    alias vkBindBufferMemory2KHR                                         = vkBindBufferMemory2;
-    alias vkBindImageMemory2KHR                                          = vkBindImageMemory2;
-
-    // VK_KHR_maintenance3
-    alias vkGetDescriptorSetLayoutSupportKHR                             = vkGetDescriptorSetLayoutSupport;
-
-    // VK_KHR_draw_indirect_count
-    alias vkCmdDrawIndirectCountKHR                                      = vkCmdDrawIndirectCount;
-    alias vkCmdDrawIndexedIndirectCountKHR                               = vkCmdDrawIndexedIndirectCount;
-
-    // VK_KHR_timeline_semaphore
-    alias vkGetSemaphoreCounterValueKHR                                  = vkGetSemaphoreCounterValue;
-    alias vkWaitSemaphoresKHR                                            = vkWaitSemaphores;
-    alias vkSignalSemaphoreKHR                                           = vkSignalSemaphore;
-
-    // VK_KHR_buffer_device_address
-    alias vkGetBufferDeviceAddressKHR                                    = vkGetBufferDeviceAddress;
-    alias vkGetBufferOpaqueCaptureAddressKHR                             = vkGetBufferOpaqueCaptureAddress;
-    alias vkGetDeviceMemoryOpaqueCaptureAddressKHR                       = vkGetDeviceMemoryOpaqueCaptureAddress;
-
-    // VK_KHR_synchronization2
-    alias vkCmdSetEvent2KHR                                              = vkCmdSetEvent2;
-    alias vkCmdResetEvent2KHR                                            = vkCmdResetEvent2;
-    alias vkCmdWaitEvents2KHR                                            = vkCmdWaitEvents2;
-    alias vkCmdPipelineBarrier2KHR                                       = vkCmdPipelineBarrier2;
-    alias vkCmdWriteTimestamp2KHR                                        = vkCmdWriteTimestamp2;
-    alias vkQueueSubmit2KHR                                              = vkQueueSubmit2;
-
-    // VK_KHR_copy_commands2
-    alias vkCmdCopyBuffer2KHR                                            = vkCmdCopyBuffer2;
-    alias vkCmdCopyImage2KHR                                             = vkCmdCopyImage2;
-    alias vkCmdCopyBufferToImage2KHR                                     = vkCmdCopyBufferToImage2;
-    alias vkCmdCopyImageToBuffer2KHR                                     = vkCmdCopyImageToBuffer2;
-    alias vkCmdBlitImage2KHR                                             = vkCmdBlitImage2;
-    alias vkCmdResolveImage2KHR                                          = vkCmdResolveImage2;
-
-    // VK_KHR_maintenance4
-    alias vkGetDeviceBufferMemoryRequirementsKHR                         = vkGetDeviceBufferMemoryRequirements;
-    alias vkGetDeviceImageMemoryRequirementsKHR                          = vkGetDeviceImageMemoryRequirements;
-    alias vkGetDeviceImageSparseMemoryRequirementsKHR                    = vkGetDeviceImageSparseMemoryRequirements;
 
     // VK_AMD_draw_indirect_count
     alias vkCmdDrawIndirectCountAMD                                      = vkCmdDrawIndirectCount;
